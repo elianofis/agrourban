@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>AgroUrban | Desde la raíz hasta la ciudad</title>
+
+ </head>
+
+<body>
+  <!-- ========================= HEADER ========================= -->
+  <header>
+    <div class="logo-container">
+      <a href="#inicio">
+        <img src="agrourban-logo.png" alt="Logo AgroUrban" />
+      </a>
+      <div class="brand">
+        <h1>AgRoUrbaN</h1>
+        <h4>Desde la raíz hasta la ciudad</h4>
+      </div>
+    </div>
+
+    <nav>
+    <ul>
+      <li><a href="agrourban.html" class="activo">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="suscripcion.html">Suscríbete</a></li>
+      <li><a href="ingreso.html">Ingresa</a></li>
+      <li><a href="politica.html">Políticas</a></li>
+    </ul>
+  </nav>
+
+    <div class="cart">
+      🛒 Carrito <span>0</span>
+    </div>
+  </header>
+
+
+  <!-- ========================= SECCIONES ========================= -->
+  <section id="inicio" class="hero">
+    <h2>Conectamos el campo con la ciudad 🌾</h2>
+    <p>Productos frescos, sostenibles y trazables desde la raíz hasta tu mesa.</p>
+    <a href="#servicios" class="btn">Descubre Más</a>
+  </section>
+
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <p><strong>AgRoUrbaN</strong> es una plataforma digital que conecta directamente a productores agrícolas
+      con consumidores urbanos, fabricantes y comerciantes del sector agroalimentario.</p>
+    <p>Promovemos la sostenibilidad, la transparencia y el comercio justo. Nuestra misión es acortar la cadena
+      de suministro y fortalecer el vínculo entre el campo y la ciudad mediante soluciones digitales.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>🌱 Conexión directa entre agricultores y consumidores</li>
+      <li>🚚 Logística y trazabilidad de productos</li>
+      <li>💳 Pagos seguros y rápidos</li>
+      <li>📈 Acceso a estadísticas y certificaciones agrícolas</li>
+    </ul>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería</h2>
+    <p>Conoce algunos de nuestros procesos y productos sostenibles 🌿</p>
+
+    <div class="galeria-fotos">
+      <img src="https://images.unsplash.com/photo-1604709177225-055f99402b4f" alt="Agricultura sostenible" />
+      <img src="https://images.unsplash.com/photo-1590080875832-13e35d3cfc94" alt="Mercado urbano" />
+      <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df" alt="Productos frescos" />
+    </div>
+
+    <div class="galeria-videos">
+      <iframe src="https://www.youtube.com/embed/d6Ue1K4-JJU" title="Producción agrícola sostenible"></iframe>
+      <iframe src="https://www.youtube.com/embed/fuXj1aEXGq8" title="Mercados campesinos en la ciudad"></iframe>
+    </div>
+  </section>
+
+  <section id="politicas">
+    <h2>Políticas de Privacidad y Seguridad</h2>
+    <p>En <strong>AgRoUrbaN</strong> garantizamos la protección de los datos personales y financieros mediante
+      cifrado SSL, autenticación segura y monitoreo constante.</p>
+    <p>Cumplimos con la Ley 1581 de 2012 y las normas de protección de datos. Todos los usuarios deben mantener
+      confidencial la información sensible, incluso después de finalizar su relación comercial.</p>
+  </section>
+
+  <!--FOOTER -->
+  <footer id="contacto">
+    <h3>Contáctanos</h3>
+    <div class="contact-links">
+      <a href="mailto:agrourban@gmail.com">Correo</a>
+      <a href="https://wa.me/573005169894" target="_blank">WhatsApp</a>
+      <a href="https://www.instagram.com/agrourban.oficial" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/agrourban.oficial" target="_blank">Facebook</a>
+      <a href="https://t.me/agrourban_oficial" target="_blank">Telegram</a>
+    </div>
+
+    <p><strong>Dirección:</strong> Cra 99 #57D-27, Medellín</p>
+    <p>© 2025 AgroUrban | Desde la raíz hasta la ciudad 🌱</p>
+  </footer>
+
+  <script>
+    // Contador del carrito (ejemplo simple)
+    const cart = document.querySelector('.cart span');
+    let count = 0;
+    document.querySelector('.cart').addEventListener('click', () => {
+      count++;
+      cart.textContent = count;
+      alert('Producto agregado al carrito 🛒');
+      <div class="user-actions">
+  <div class="cart">🛒 Carrito <span>0</span></div>
+  <button id="btnIngreso">👤 Ingreso</button>
+</div>
+    });
+  </script>
+</body>
+</html>
