@@ -1,0 +1,289 @@
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#btnIngreso {
+  background: linear-gradient(135deg, #388e3c, #66bb6a);
+  border: none;
+  color: rgb(108, 32, 158);
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#btnIngreso:hover {
+  background: linear-gradient(135deg, #66bb6a, #81c784);
+  transform: scale(1.05);
+}
+
+    /* ========================= VARIABLES ========================= */
+    :root {
+      --primary-color: #2e7d32;
+      --secondary-color: #388e3c;
+      --accent-color: #66bb6a;
+      --light-accent: #050505;
+      --bg-color: #5fa869;
+      --text-color: #333;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 15px;
+    }
+
+    /* ========================= ESTILOS GENERALES ========================= */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      margin: 10px auto;
+      border-radius: 3px;
+    }
+
+    /* ========================= HEADER ========================= */
+    header {
+      background-color: var(--primary-color);
+      color: rgb(86, 23, 122);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+      box-shadow: 0 4px 6px var(--shadow);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      width: 100px;
+      transition: var(--transition);
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .brand h1 {
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    .brand h4 {
+      margin: 0;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: rgb(66, 13, 90);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      padding: 6px 10px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: rgba(15, 73, 68, 0.842);
+      color: var(--light-accent);
+    }
+
+    .cart {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      background: var(--secondary-color);
+      padding: 6px 15px;
+      border-radius: 25px;
+      color: rgb(181, 49, 207);
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    .cart:hover {
+      background: var(--accent-color);
+    }
+
+    .cart span {
+      background: white;
+      color: var(--primary-color);
+      border-radius: 50%;
+      padding: 3px 8px;
+      font-size: 0.8em;
+    }
+
+    /* ========================= SECCIÓN HERO ========================= */
+    .hero {
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      color: var(--primary-color);
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 15px auto;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    /* ========================= SECCIONES ========================= */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section:nth-child(even) {
+      background-color: white;
+    }
+
+    section:nth-child(odd) {
+      background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+    }
+
+    p {
+      max-width: 800px;
+      margin: 15px auto;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: var(--bg-color);
+      margin: 10px auto;
+      max-width: 700px;
+      padding: 12px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px var(--shadow);
+    }
+
+    /* ========================= GALERÍA ========================= */
+    .galeria-fotos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .galeria-fotos img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px var(--shadow);
+      transition: var(--transition);
+    }
+
+    .galeria-fotos img:hover {
+      transform: scale(1.05);
+    }
+
+    .galeria-videos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .galeria-videos iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 5px var(--shadow);
+    }
+
+    /* ========================= FOOTER ========================= */
+    footer {
+      background-color: #1b5e20;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .contact-links a {
+      background: var(--secondary-color);
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .contact-links a:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    /* ========================= RESPONSIVE ========================= */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
+    }

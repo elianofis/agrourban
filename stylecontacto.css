@@ -1,0 +1,152 @@
+:root {
+            --primary-color: #4CAF50;
+            --secondary-color: #f0f1ee;
+            --accent-color: #ecebe0;
+            --dark-overlay: rgba(0, 0, 0, 0.3);
+            --light-bg: rgba(255, 255, 255, 0.9);
+            --shadow: rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        /* === Fondo y estructura general === */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* === Menú superior === */
+        nav.menu {
+            background-color: var(--dark-overlay);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav.menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav.menu ul li {
+            margin: 0 15px;
+        }
+
+        nav.menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav.menu ul li a:hover,
+        nav.menu ul li a.activo {
+            color: var(--accent-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* === Contenedor principal === */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        /* === Sección de contacto === */
+        .contacto {
+            max-width: 600px;
+            background: var(--light-bg);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px var(--shadow);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .contacto img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .contacto h2 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contacto p {
+            font-size: 1.1em;
+            margin: 8px 0;
+        }
+
+        /* === Botones de redes === */
+        .botones-redes {
+            margin-top: 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 25px;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px var(--shadow);
+        }
+
+        .boton:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px var(--shadow);
+        }
+
+        /* === Footer === */
+        footer {
+            padding: 15px;
+            background-color: var(--dark-overlay);
+            font-size: 0.9em;
+            text-align: center;
+            color: white;
+        }
+
+        /* === Animación === */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* === Responsivo === */
+        @media (max-width: 768px) {
+            .contacto {
+                padding: 25px;
+                margin: 20px;
+            }
+            .contacto h2 {
+                font-size: 1.8em;
+            }
+            .botones-redes {
+                flex-direction: column;
+                align-items: center;
+            }
+        }

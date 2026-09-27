@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesuscripcion.css">
+  <title>Formulario de Suscripción - AgroUrban</title>
+  
+</head>
+
+<body>
+
+  <!-- ENCABEZADO -->
+  <header>
+    <a href="agrourban.html"><img src="agrourban-logo.png" alt="Logo de AgroUrban"></a>
+    <p>Desde la raíz hasta la ciudad</p>
+  </header>
+
+  <!-- MENÚ PRINCIPAL -->
+  <nav class="menu-principal">
+    <a href="agrourban.html">Inicio</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="suscripcion.html" class="activo">Suscríbete</a>
+    <a href="ingreso.html">Ingresa</a>
+    <a href="politica.html">Políticas</a>
+  </nav>
+
+  <!-- FORMULARIO DE SUSCRIPCIÓN -->
+  <div class="form-wrapper">
+    <form class="formulario" id="form-suscripcion" action="#" method="post">
+      <h1>Formulario de Suscripción a <span class="marca">AgroUrban</span></h1>
+
+      <label for="nombre">Nombres y Apellidos:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+      <label for="fecha_de_nacimiento">Fecha de Nacimiento:</label>
+      <input type="date" id="fecha_de_nacimiento" name="fecha_de_nacimiento" required>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" min="0" max="120" required readonly>
+
+      <label for="email">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+
+      <p>Género:</p>
+      <label><input type="radio" name="genero" value="masculino" required> Masculino</label>
+      <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+      <label><input type="radio" name="genero" value="otro"> Otro</label>
+
+      <label for="departamento">Departamento:</label>
+      <select id="departamento" name="departamento" required>
+        <option value="">Seleccione un departamento</option>
+        <option value="antioquia">Antioquia</option>
+        <option value="cundinamarca">Cundinamarca</option>
+        <option value="boyaca">Boyacá</option>
+        <option value="atlantico">Atlántico</option>
+        <option value="valle">Valle del Cauca</option>
+      </select>
+
+      <label for="ciudad">Ciudad / Municipio:</label>
+      <select id="ciudad" name="ciudad" required disabled>
+        <option value="">Seleccione primero un departamento</option>
+      </select>
+
+      <input type="submit" value="Enviar" class="btn-enviar">
+    </form>
+  </div>
+
+  <!-- PIE DE PÁGINA -->
+  <footer id="contacto">
+    <div class="contact-links">
+      <a href="mailto:agrourban@gmail.com">Correo</a>
+      <a href="https://wa.me/573005169894" target="_blank">WhatsApp</a>
+      <a href="https://www.instagram.com/agrourban.oficial" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/agrourban.oficial" target="_blank">Facebook</a>
+      <a href="https://t.me/agrourban_oficial" target="_blank">Telegram</a>
+    </div>
+    <p>© 2025 AgroUrban | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    // Calcular edad
+    function calcularEdad(fechaNacimiento) {
+      const birthDate = new Date(fechaNacimiento);
+      const today = new Date();
+      let edad = today.getFullYear() - birthDate.getFullYear();
+      const mes = today.getMonth() - birthDate.getMonth();
+      if (mes < 0 || (mes === 0 && today.getDate() < birthDate.getDate())) {
+        edad--;
+      }
+      return edad;
+    }
+
+    document.getElementById('fecha_de_nacimiento').addEventListener('change', function() {
+      const edadInput = document.getElementById('edad');
+      if (this.value) {
+        edadInput.value = calcularEdad(this.value);
+      } else {
+        edadInput.value = '';
+      }
+    });
+
+    // Ciudades por departamento
+    const ciudadesPorDepartamento = {
+      antioquia: ['Medellín', 'Envigado', 'Bello', 'Itagüí'],
+      cundinamarca: ['Bogotá', 'Soacha', 'Chía', 'Zipaquirá'],
+      boyaca: ['Tunja', 'Duitama', 'Sogamoso', 'Paipa'],
+      atlantico: ['Barranquilla', 'Soledad', 'Malambo', 'Sabanalarga'],
+      valle: ['Cali', 'Palmira', 'Buenaventura', 'Tuluá']
+    };
+
+    document.getElementById('departamento').addEventListener('change', function() {
+      const departamento = this.value;
+      const ciudadSelect = document.getElementById('ciudad');
+      ciudadSelect.innerHTML = '<option value="">Seleccione una ciudad</option>';
+      if (departamento && ciudadesPorDepartamento[departamento]) {
+        ciudadesPorDepartamento[departamento].forEach(ciudad => {
+          const option = document.createElement('option');
+          option.value = ciudad.toLowerCase().replace(/\s+/g, '-');
+          option.textContent = ciudad;
+          ciudadSelect.appendChild(option);
+        });
+        ciudadSelect.disabled = false;
+      } else {
+        ciudadSelect.disabled = true;
+      }
+    });
+
+    // Validar al enviar
+    document.getElementById('form-suscripcion').addEventListener('submit', function(event) {
+      const fechaNacimiento = document.getElementById('fecha_de_nacimiento').value;
+      const edad = document.getElementById('edad').value;
+      if (fechaNacimiento && calcularEdad(fechaNacimiento) !== parseInt(edad)) {
+        alert('La edad no coincide con la fecha de nacimiento. Verifica los datos.');
+        event.preventDefault();
+      } else {
+        alert('¡Formulario enviado con éxito!');
+      }
+    });
+  </script>
+</body>
+</html>
